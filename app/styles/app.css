@@ -47,14 +47,9 @@ section{
   height: 50vh;
 }
 
-.button-link {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  text-decoration: none;
-  cursor: pointer;
+.gallery-image{
+  /* height: calc(100% -3rem); */
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
 }
 
 @media (min-width: 768px) {

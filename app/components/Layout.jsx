@@ -1,4 +1,4 @@
-import blackLogo from '../assets/blackLogo.png';
+import logo from '../assets/logo-black.png';
 import redslab from '../assets/redslab.png';
 
 import {useParams, Form, Await, useMatches} from '@remix-run/react';
@@ -168,7 +168,7 @@ function MobileHeader({title, isHome, openCart, openMenu}) {
         className="flex items-center justify-center flex-grow w-full h-full"
         to="/"
       >
-          <img src={blackLogo} alt="logo" class="h-full p-1"></img>
+          <img src={logo} alt="logo" class="h-full p-2"></img>
       </Link>
 
       <div className="flex items-center justify-end w-full gap-4">
@@ -211,7 +211,7 @@ function DesktopHeader({isHome, menu, openCart, title}) {
       <Link 
         className="flex items-center justify-center flex-grow w-full h-full"
         to="/" prefetch="intent">
-          <img src={blackLogo} alt="logo" className='h-full p-1'></img>
+          <img src={logo} alt="logo" className='h-full p-2'></img>
       </Link>
 
       <div className="flex items-center justify-end gap-1 w-[33%]">
