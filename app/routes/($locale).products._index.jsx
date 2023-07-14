@@ -55,39 +55,20 @@ export async function loader({request, context: {storefront}}) {
 
 export default function AllProducts() {
   const {products} = useLoaderData();
+  const nodes = products.nodes;
 
   return (
     <>
-      <PageHeader heading="All Products" variant="allCollections" />
-      <Section>
-        <Pagination connection={products}>
-          {({nodes, isLoading, NextLink, PreviousLink}) => {
-            const itemsMarkup = nodes.map((product, i) => (
+      <div className='text-4xl sm:text-left font-one pt-6 px-6'>All Products</div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-center p-6 gap-6">
+          {nodes.map((product) =>(
               <ProductCard
                 key={product.id}
                 product={product}
-                loading={getImageLoadingPriority(i)}
+                // loading={getImageLoadingPriority(product.id)}
               />
-            ));
-
-            return (
-              <>
-                <div className="flex items-center justify-center mt-6">
-                  <PreviousLink className="inline-block rounded font-medium text-center py-3 px-6 border border-primary/10 bg-contrast text-primary w-full">
-                    {isLoading ? 'Loading...' : 'Previous'}
-                  </PreviousLink>
-                </div>
-                <Grid data-test="product-grid">{itemsMarkup}</Grid>
-                <div className="flex items-center justify-center mt-6">
-                  <NextLink className="inline-block rounded font-medium text-center py-3 px-6 border border-primary/10 bg-contrast text-primary w-full">
-                    {isLoading ? 'Loading...' : 'Next'}
-                  </NextLink>
-                </div>
-              </>
-            );
-          }}
-        </Pagination>
-      </Section>
+            ))}
+      </div>
     </>
   );
 }

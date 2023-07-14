@@ -12,7 +12,7 @@ export function ProductGallery({media, className}) {
     <div
       className={"carousel h-[62vh] sm:h-[70vh] lg:h-[90vh] w-full overflow-scroll py-6 pl-6"}
     >
-      <div className="flex h-full w-full">
+      <div className="flex h-full w-full sm:w-[50%]">
         {media.map((med, i) => {
           const isFirst = i === 0;
           const isFourth = i === 3;
